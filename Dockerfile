@@ -1,5 +1,5 @@
 FROM node:4
-MAINTAINER Olivier Louvignes <olouvignes@carlipa.com>
+MAINTAINER Olivier Louvignes <olouvignes@mg-crea.com>
 # http://askubuntu.com/questions/412009/open-cl-in-intel
 
 ARG OPENCV_VERSION
