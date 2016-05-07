@@ -2,7 +2,7 @@
 
 Docker image for NodeJS with [OpenCV](http://opencv.org/)
 
-## Install
+## Quickstart
 
 - In your shell:
 
@@ -16,7 +16,8 @@ docker pull mgcrea/node-opencv:2.4.12.3
 FROM mgcrea/node-opencv:2.4.12.3
 ```
 
-## Usage with `docker-compose`
+
+### Usage with `docker-compose`
 
 ```yaml
 # https://docs.docker.com/compose/yml/
@@ -46,7 +47,14 @@ services:
 docker-compose up -d
 ```
 
-**NOTE**: for security reasons, starting this docker container will change the permissions of all files in your data directory to a new, docker-only user. This ensures that the docker container can access the files.
+
+### Latest tagged releases
+
+- `mgcrea/node-opencv:2`
+- `mgcrea/node-opencv:2.4`
+- `mgcrea/node-opencv:2.4.12`
+- `mgcrea/node-opencv:2.4.12.3`
+
 
 ## Links
 
