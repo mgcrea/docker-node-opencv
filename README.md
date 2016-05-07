@@ -41,3 +41,7 @@ docker-compose up -d
 ```
 
 **NOTE**: for security reasons, starting this docker container will change the permissions of all files in your data directory to a new, docker-only user. This ensures that the docker container can access the files.
+
+## Links
+
+- http://askubuntu.com/questions/412009/open-cl-in-intel
