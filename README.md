@@ -51,6 +51,8 @@ docker-compose up -d
 
 ### Latest tagged releases
 
+You can find the latest available tags at [hub.docker.com](https://hub.docker.com/r/mgcrea/node-opencv/tags/)
+
 - `mgcrea/node-opencv:2`
 - `mgcrea/node-opencv:2.4`
 - `mgcrea/node-opencv:2.4.12`
