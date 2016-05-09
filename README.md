@@ -7,13 +7,14 @@ Docker image for NodeJS with [OpenCV](http://opencv.org/)
 - In your shell:
 
 ```sh
-docker pull mgcrea/node-opencv:2.4.12.3
+docker pull mgcrea/node-opencv:2.4.12
+docker run --name test_opencv -it mgcrea/node-opencv:2.4.12 /bin/bash
 ```
 
 - In your `Dockerfile`:
 
 ```
-FROM mgcrea/node-opencv:2.4.12.3
+FROM mgcrea/node-opencv:2.4.12
 ```
 
 
@@ -25,7 +26,7 @@ FROM mgcrea/node-opencv:2.4.12.3
 version: '2'
 services:
   backend:
-    image: mgcrea/node-opencv:2.4.12.3
+    image: mgcrea/node-opencv:2.4.12
     container_name: test_opencv
     command: "node lib"
     # command: "/usr/local/bin/npm install --verbose"

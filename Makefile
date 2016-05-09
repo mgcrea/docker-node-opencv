@@ -15,3 +15,6 @@ rebuild: base
 release: rebuild
 	@docker build --build-arg OPENCV_VERSION=${OPENCV_VERSION} --tag=${DOCKER_IMAGE}:${OPENCV_VERSION} .
 	@scripts/tag.sh ${DOCKER_IMAGE} ${OPENCV_VERSION}
+
+push:
+	@scripts/push.sh ${DOCKER_IMAGE} ${OPENCV_VERSION}
