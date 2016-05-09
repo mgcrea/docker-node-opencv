@@ -1,4 +1,4 @@
-# docker-node-opencv [![Docker Pulls](https://img.shields.io/docker/pulls/mgcrea/node-opencv.svg)](https://registry.hub.docker.com/u/mgcrea/node-opencv/)
+# docker-node-opencv [![docker pulls](https://img.shields.io/docker/pulls/mgcrea/node-opencv.svg)](https://registry.hub.docker.com/u/mgcrea/node-opencv/) [![image size](https://img.shields.io/imagelayers/image-size/mgcrea/node-opencv/latest.svg)](https://imagelayers.io/?images=mgcrea%2Fnode-opencv:latest)
 
 Docker image for NodeJS with [OpenCV](http://opencv.org/)
 

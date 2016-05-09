@@ -13,3 +13,5 @@ for v in "${VERSIONS[@]}"; do
     echo Tagged ${TAG_NAME}:${TAG}
   fi
 done
+docker tag ${TAG_NAME}:${TAG_VERSION} ${TAG_NAME}:latest
+echo Tagged ${TAG_NAME}:latest
