@@ -2,7 +2,7 @@ FROM node:4
 MAINTAINER Olivier Louvignes <olivier@mg-crea.com>
 
 ARG OPENCV_VERSION
-ENV OPENCV_VERSION ${OPENCV_VERSION:-2.4.12.3}
+ENV OPENCV_VERSION ${OPENCV_VERSION:-2.4.13}
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \

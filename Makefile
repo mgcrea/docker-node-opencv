@@ -1,5 +1,5 @@
 DOCKER_IMAGE := mgcrea/node-opencv
-OPENCV_VERSION := 2.4.12.3
+OPENCV_VERSION := 2.4.13
 
 all: build
 
