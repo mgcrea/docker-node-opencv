@@ -1,8 +1,8 @@
-FROM node:4
+FROM node:6
 MAINTAINER Olivier Louvignes <olivier@mg-crea.com>
 
 ARG OPENCV_VERSION
-ENV OPENCV_VERSION ${OPENCV_VERSION:-2.4.13}
+ENV OPENCV_VERSION ${OPENCV_VERSION:-2.4.13.3}
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/local
-RUN curl -SLO "https://github.com/Itseez/opencv/archive/${OPENCV_VERSION}.zip" \
+RUN curl -SLO "https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip" \
   && unzip ${OPENCV_VERSION}.zip \
   && mv /usr/local/opencv-${OPENCV_VERSION} /usr/local/opencv \
   && rm ${OPENCV_VERSION}.zip
@@ -34,3 +34,4 @@ RUN cmake -D CMAKE_BUILD_TYPE=RELEASE \
 
 RUN make -j7
 RUN make install
+WORKDIR /usr/src/app
