@@ -9,6 +9,7 @@
   "author": "Olivier Louvignes <olivier@mgcrea.io>",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "opencv": "^6.0.0",
     "through2": "^2.0.3"
   }
