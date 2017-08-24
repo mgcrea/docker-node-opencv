@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Welcome to Express!</title>
+  <style>
+    body {
+      width: 35em;
+      margin: 0 auto;
+      font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Welcome to Express!</h1>
+  <p>If you see this page, the express web server is successfully installed and working. Further configuration is required.</p>
+
+  <p>For online documentation and support please refer to
+    <a href="http://expressjs.com/">expressjs.com</a>.<br/>
+
+    <p><em>Thank you for using Express.</em></p>
+    <ul id="messages"></ul>
+    <canvas id="canvas" width="640" height="480" />
+    <script src="/socket.io.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(/* evt */) {
+        var socket = io();
+        // $('form').submit(function() {
+        //   socket.emit('chat message', $('#m').val());
+        //   $('#m').val('');
+        //   return false;
+        // });
+        const messages = document.getElementById('messages')
+        const image = document.getElementById('image');
+        const canvas = document.getElementById('canvas');
+
+        socket.on('detection', function(msg) {
+          // draw in canvas
+          const ctx = canvas.getContext('2d');
+          const image = new Image();
+          image.src = msg.frameSrc + '?r=' + (Math.random() * 1e18);
+          image.onload = () => {
+            ctx.drawImage(image, 0, 0);
+            // objects.forEach((object, index) => {
+            //   ctx.strokeStyle = '#00ff00';
+            //   ctx.strokeRect(object.x, object.y, object.width, object.height);
+            //   ctx.strokeStyle = '#0000ff';
+            //   ctx.strokeRect(0, 480 / 2 - 1, 640, 3);
+            //   ctx.strokeStyle = '#ff0000';
+            //   const xPosition = object.x + object.width / 2;
+            //   const yPosition = object.y + object.height / 2;
+            //   const height = (480 / 2) - yPosition;
+            //   ctx.strokeRect(xPosition, yPosition, 3, height);
+            // });
+          };
+
+          // messages.append($('<li>').text(JSON.stringify(msg)));
+          // window.scrollTo(0, document.body.scrollHeight);
+        });
+      });
+    </script>
+</body>
+
+</html>

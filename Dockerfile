@@ -9,15 +9,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip \
     cmake \
     libv4l-dev \
+    beignet-dev \
     opencl-headers \
     \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/local
-RUN curl -SLO "https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip" \
-  && unzip ${OPENCV_VERSION}.zip \
+RUN curl -SLO "https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.tar.gz" \
+  && tar -xzvf ${OPENCV_VERSION}.tar.gz \
   && mv /usr/local/opencv-${OPENCV_VERSION} /usr/local/opencv \
-  && rm ${OPENCV_VERSION}.zip
+  && rm ${OPENCV_VERSION}.tar.gz
 
 RUN mkdir /usr/local/opencv/build
 WORKDIR /usr/local/opencv/build

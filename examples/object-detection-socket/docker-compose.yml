@@ -1,18 +1,21 @@
 # https://docs.docker.com/compose/yml/
-# docker run --rm --entrypoint='/bin/bash' -v $(pwd):/usr/src/app mgcrea/node-opencv:latest -c 'npm i';
+# dkc run backend /bin/bash -c 'rm -rf node_modules; npm i'
 
 version: '2'
 services:
   backend:
-    image: mgcrea/node-opencv:latest
+    image: mgcrea/node-opencv:2
     command: "node ."
     network_mode: "host"
     container_name: object-detection-socket
     environment:
       - LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/opencv/build/lib
       - NODE_ENV=production
+      - NODE_PORT=3000
     expose:
       - "3000"
+    ports:
+      - "3000:3000"
     volumes:
       - .:/usr/src/app
       - /usr/lib/beignet:/usr/lib/beignet:ro
